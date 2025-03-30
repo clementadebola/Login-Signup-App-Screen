@@ -2,17 +2,23 @@ import React from "react";
 import { View, Text, Button, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SignupScreen() {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
+      {/* First Section - Purple Background */}
       <View style={styles.purpleSection}>
-        <TouchableOpacity style={styles.backButton}>
+        {/* Back Button */}
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.title}>Sign Up</Text>
       </View>
 
+      {/* Second Section - White Background */}
       <View style={styles.whiteSection}>
         <Text>Sign up screen content goes here...</Text>
       </View>
